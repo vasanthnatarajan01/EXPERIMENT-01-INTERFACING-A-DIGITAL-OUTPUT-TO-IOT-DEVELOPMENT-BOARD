@@ -1,13 +1,13 @@
 # EXPERIMENT-01-INTERFACING-A-DIGITAL-OUTPUT-TO-IOT-DEVELOPMENT-BOARD
 
 
-**DATE:**
+**DATE: 10-11-2026**
 
-**NAME:**
+**NAME: VASANTH N**
 
-**ROLL NO:**
+**ROLL NO: 212224110060**
 
-**DEPARTMENT:**
+**DEPARTMENT: Computer Science And Engineering(IoT)**
 
 ## Aim
 
@@ -98,11 +98,40 @@ With its power-efficient design, built-in LoRaWAN support, and flexible communic
 
 ## STM 32 CUBE PROGRAM
 
-```
-// Your STM 32 CUBE Program code here
+```c
+#include "main.h"
+
+UART_HandleTypeDef huart2;
+
+void SystemClock_Config(void);
+static void MX_GPIO_Init(void);
+static void MX_USART2_UART_Init(void);
+
+int main(void)
+{
+  HAL_Init();
+  SystemClock_Config();
+
+  MX_GPIO_Init();
+  MX_USART2_UART_Init();
+  
+  while (1)
+  {
+	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0, GPIO_PIN_SET);
+	  HAL_Delay(5000);
+	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0, GPIO_PIN_RESET);
+	  HAL_Delay(5000);
+  }
+}
+
 ```
 
 ## OUTPUT
+<img width="1917" height="1156" alt="Screenshot 2026-10-31 025453" src="https://github.com/user-attachments/assets/72fe293d-2edf-4647-8029-8fe3b2e8a56f" />
+<img width="1042" height="620" alt="image" src="https://github.com/user-attachments/assets/ac29fe5e-e33f-41e7-b367-3e9a53923519" />
+<img width="900" height="1600" alt="WhatsApp Image 2026-11-17 at 14 10 03" src="https://github.com/user-attachments/assets/bf7e7c7c-86d6-4d0c-a782-1e9f6e6d6465" />
+
+
 
 ## Result
 
